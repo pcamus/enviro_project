@@ -4,4 +4,4 @@ In this project I used a Raspberry Pi 4 board with an [enviro+](https://shop.pim
 
 This project was an opportunity to test the PyQt GUI toolkit and the Google sheet access from Python.
 
-![]("enviro_gui.jpg")
+![ ]("enviro_gui.jpg")
