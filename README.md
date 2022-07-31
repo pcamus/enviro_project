@@ -9,7 +9,7 @@ The GUI was designed with QtDesigner and PyQt version was 5.
 *The GUI window is the following :*
 ![](enviro_gui.jpg)
 
-The program use 3 timers (QTimer objects) :
+The program uses 3 timers (QTimer objects) :
 
 - 3 minutes timer for logging in gsheet.
 - 10 seconds timer for data acquisition and averaging.
