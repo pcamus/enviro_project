@@ -4,7 +4,7 @@ In this project I used a Raspberry Pi 4 board with an [enviro+](https://shop.pim
 
 This project was an opportunity to test the PyQt GUI toolkit and the Google sheet access from Python.
 
-The GUI was designed with QtDesigner and PyQt version was 5.
+The GUI was designed with QtDesigner and PyQt 5.
 
 *The GUI window is the following :*
 ![](enviro_gui.jpg)
