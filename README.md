@@ -22,4 +22,4 @@ The program uses 3 timers (QTimer objects) :
 References : [QtDesigner by Michael Hermann](https://build-system.fman.io/qt-designer-download)
 
 - [ ] To do : see if this PyQt5 program runs on PyQt6.
-- [ ] To Do : see how to use .ui file directly from Python without converting it before
+- [ ] To do : see how to use .ui file directly from Python without converting it before.
