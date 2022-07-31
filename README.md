@@ -14,5 +14,9 @@ The program use 3 timers (QTimer objects) :
 
 - 3 minutes timer for logging in gsheet.
 - 10 seconds timer for data acquisition and averaging.
-- 1 second timer to dis^lay the time in the staus bar.
+- 1 second timer to display the time in the staus bar.
+
+5 events are taken into account : the 3 timers events, the start recording button clicked event and the Quit command in the File menu
+
+- [ ] To do : port this application on PyQt6
 
