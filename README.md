@@ -1,6 +1,6 @@
 ## Project with the enviro+ hat.
 
-In this project I used a Raspberry Pi 4 board with an [enviro+](https://shop.pimoroni.com/products/enviro?variant=31155658457171) hat from Pimoroni and a pms5003 particle sensor.
+In this project I used a Raspberry Pi 4 board with an [enviro+](https://shop.pimoroni.com/products/enviro?variant=31155658457171) hat from Pimoroni and a [pms5003](https://github.com/m2mlorawan/datasheet/blob/master/plantower-pms5003-manual_v2-3.pdf) particle sensor.
 
 This project was an opportunity to test the PyQt GUI toolkit and the Google sheet access from Python.
 
