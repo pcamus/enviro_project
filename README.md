@@ -19,5 +19,6 @@ The program uses 3 timers (QTimer objects) :
 
 5 events are taken into account : the 3 timers events, the start recording button clicked event and the Quit command in the File menu
 
-- [ ] To do : port this application on PyQt6 (see : [QtDesigner download](https://build-system.fman.io/qt-designer-download))
+References : [QtDesigner by Michael Hermann](https://build-system.fman.io/qt-designer-download)
 
+- [ ] To do : see if this PyQt5 program runs on PyQt6.
