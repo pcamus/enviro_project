@@ -7,13 +7,13 @@
 # 21/4/2020
 
 import sys, random, time
-from enviro_v3 import *   #Qt window Python description
-from PyQt5.QtCore import *
-from PyQt5.QtGui import *
+from PyQt5 import QtWidgets
+from PyQt5.uic import loadUi
+from PyQt5.QtCore import * # non graphical elements as timer
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 
-from bme280 import BME280 # T, H, P lib
+from bme280 import * # T, H, P lib
 try:
     from smbus2 import SMBus
 except ImportError:
@@ -43,8 +43,7 @@ class mywindow(QtWidgets.QMainWindow):
 
     def __init__(self):
         super(mywindow, self).__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.ui = loadUi("enviro_v5.ui", self)
         
         # add timers to window.
         
@@ -56,7 +55,7 @@ class mywindow(QtWidgets.QMainWindow):
         # timer 10s 
         self.timer_10s = QTimer()
         self.timer_10s.timeout.connect(self.handleTimer_10s)
-        self.timer_10s.start(10000) # 10000 ms = 10 s
+        self.timer_10s.start(3000) # 10000 ms = 10 s
        
         # timer 1s 
         self.timer_1s = QTimer()
@@ -131,7 +130,7 @@ class mywindow(QtWidgets.QMainWindow):
         self.sum_pm1_0 = 0
         self.sum_pm2_5 = 0
         self.sum_pm10 = 0
-        self.num_s = 0 # number of samples for avergae
+        self.num_s = 0 # number of samples for average
     
     def handleTimer_10s(self):
         # each 10s take measurement display it and sum it for averaging
@@ -158,21 +157,21 @@ class mywindow(QtWidgets.QMainWindow):
         if reduc_gaz < 0 :
             reduc_gaz = 0 # negative values are not physical (sensor error)
         self.sum_redg += reduc_gaz
-        self.ui.prog_reduc.setValue(reduc_gaz)
+        self.ui.prog_reduc.setValue(int(reduc_gaz))
                 
         ox_gaz=gas.read_oxidising() # 800 ohms-> 20 kohms 0-> 10ppm
         ox_gaz=(ox_gaz-800)/2000
         if ox_gaz < 0 :
             ox_gaz = 0 # negative values are not physical (sensor error)
         self.sum_oxg += ox_gaz
-        self.ui.prog_ox.setValue(ox_gaz)
+        self.ui.prog_ox.setValue(int(ox_gaz))
                 
         nh3_gaz=gas.read_nh3() # 10 kohms-> 1500 kohms 0-> 300ppm
         nh3_gaz=(nh3_gaz-10000)/5000
         if nh3_gaz < 0 :
             nh3_gaz = 0 # negative values are not physical (sensor error)
         self.sum_nh3g += nh3_gaz
-        self.ui.prog_nh3.setValue(nh3_gaz)
+        self.ui.prog_nh3.setValue(int(nh3_gaz))
         
         readings = pms5003.read()      
         
